@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/light mode </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html , body{
+            height: 100%;
+            width: 100%;
+             transition: background-color 0.5s, color 0.5s;
+        }
+        body.dark{
+            background-color: black;
+            color: white;
+        }
+        body.light{
+            background-color: #fff;
+            color: black;
+        }
+        button{
+            padding: 8px 15px;
+            border: none;
+            border-radius:10px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        body.dark button{
+            background-color: #fff;
+            color: black;
+        }
+        body.light button{
+            background-color: black;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body class="light">
+    <button>Dark Mode</button>
+    <script>
+        let body = document.querySelector("body");
+        let btn = document.querySelector("button");
+
+        btn.addEventListener("click",()=>{
+            body.classList.toggle("dark")
+            body.classList.toggle("light")
+
+            if(body.classList.contains("dark")){
+                btn.innerText ="Light Mode"
+            }
+            else{
+                btn.innerText = "Dark Mode"
+            }
+        })
+    </script>
+</body>
+</html>
